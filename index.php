@@ -4,12 +4,14 @@
  * @version 1.0
  * @date 1/6/2020
  * @url http://sjamieson.greenriverdev.com/328/pp1/index.php
- * @filename Pair Program 1
+ * @name Pair Program 1
  */
 
     // error reporting
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
+
+    include 'functions.php';
 ?>
 
 <!doctype html>
@@ -25,14 +27,10 @@
     <h1>Pair Program 1</h1>
 
     <?php
+        // define an array of numbers
         $numbers = [7, 9, 8, 9, 8, 8, 6];
 
-        function printArr($arr) {
-            foreach($arr as $item) {
-                echo $item."<br>";
-            }
-        }
-
+        // call the function printArr
         printArr($numbers);
     ?>
 
