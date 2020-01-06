@@ -2,9 +2,9 @@
 /**
  * @author Shayna Jamieson
  * @version 1.0
- * @date 1/6/2020
- * @url http://sjamieson.greenriverdev.com/328/pp1/functions.php
- * @Assignment Pair Program 1
+ * Date: 1/6/2020
+ * URL: http://sjamieson.greenriverdev.com/328/pp1/functions.php
+ * Assignment: Pair Program 1
  */
 
 // error reporting
@@ -14,8 +14,12 @@ error_reporting(E_ALL);
 // this function takes an array in and prints each item
 // on a new line
 function printArr($arr) {
-    foreach($arr as $item) {
-        echo $item."<br>";
+    try {
+        foreach($arr as $item) {
+            echo $item."<br>";
+        }
+    } catch(Exception $e) {
+        print("Could not print array: $e");
     }
 }
 
@@ -29,28 +33,61 @@ function largest($arr) {
                 $largest = $arr[$i];
             }
         }
+        echo "Largest: $largest<br>";
     } catch(Exception $e) {
-        print($e);
+        print("Could not calculate largest: $e");
     }
-
-    echo "Largest: $largest<br>";
 }
 
 // this function takes an array in and removes duplicates
 // it then echos the result on index.php as [1, 2, 3]
 function removeDups($arr) {
-    $tempArr = [];
-    $returnString = "[";
+    try {
+        $tempArr = [];
+        $returnString = "[";
 
-    foreach($arr as $item) {
-        if(!in_array($item, $tempArr)) {
-            array_push($tempArr, $item);
-            $returnString .= "$item, ";
+        foreach($arr as $item) {
+            if(!in_array($item, $tempArr)) {
+                array_push($tempArr, $item);
+                $returnString .= "$item, ";
+            }
         }
+
+        $returnString = substr($returnString, 0, strlen($returnString) - 2);
+        $returnString .= "]";
+
+        echo "Remove Duplicates: $returnString<br>";
+    } catch(Exception $e) {
+        print("Could not remove duplicates: $e");
     }
+}
 
-    $returnString = substr($returnString, 0, strlen($returnString) - 2);
-    $returnString .= "]";
+// this function takes an array in and returns an associative array with
+// each value from the original array and how many times that value occurs
+// in the original array (with keys sorted)
+function distribution($arr) {
+    $assocArr = array();
+    try {
+        foreach($arr as $item) {
+            if(!array_key_exists($item, $assocArr)) {
+                $assocArr[$item] = 1;
+            } else {
+                $tempNum = $assocArr[$item];
+                $assocArr[$item] = $tempNum + 1;
+            }
+        }
 
-    echo $returnString;
+        ksort($assocArr);
+
+        $returnString = "[";
+        foreach($assocArr as $key => $value) {
+            $returnString .= "".$key."=>".$value.", ";
+        }
+
+        $returnString = substr($returnString, 0, strlen($returnString) - 2);
+        echo "Distribution: $returnString]";
+
+    } catch(Exception $e) {
+        print("Could not distribute: $e");
+    }
 }

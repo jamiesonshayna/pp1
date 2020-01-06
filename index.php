@@ -2,9 +2,9 @@
 /**
  * @author Shayna Jamieson
  * @version 1.0
- * @date 1/6/2020
- * @url http://sjamieson.greenriverdev.com/328/pp1/index.php
- * @name Pair Program 1
+ * Date: 1/6/2020
+ * URL: http://sjamieson.greenriverdev.com/328/pp1/index.php
+ * Assignment: Pair Program 1
  */
 
     // error reporting
@@ -38,7 +38,9 @@
 
         // call the function removeDups
         removeDups($numbers);
-    ?>
 
+        // call the function distribution
+        distribution($numbers);
+    ?>
 </body>
 </html>
