@@ -18,3 +18,18 @@ function printArr($arr) {
         echo $item."<br>";
     }
 }
+
+function largest($arr) {
+    try {
+        $largest = $arr[0];
+        for($i = 1; $i < count($arr); $i++) {
+            if($arr[$i] > $largest) {
+                $largest = $arr[$i];
+            }
+        }
+    } catch(Exception $e) {
+        print($e);
+    }
+
+    echo "Largest: $largest<br>";
+}

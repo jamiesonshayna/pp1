@@ -32,6 +32,9 @@
 
         // call the function printArr
         printArr($numbers);
+
+        // call the function largest
+        largest($numbers);
     ?>
 
 </body>
