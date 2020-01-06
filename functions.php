@@ -4,7 +4,7 @@
  * @version 1.0
  * @date 1/6/2020
  * @url http://sjamieson.greenriverdev.com/328/pp1/functions.php
- * @name Pair Program 1
+ * @Assignment Pair Program 1
  */
 
 // error reporting
@@ -19,6 +19,8 @@ function printArr($arr) {
     }
 }
 
+// this function takes an array in and finds the largest number
+// it then prints the number on a line in index.php
 function largest($arr) {
     try {
         $largest = $arr[0];
@@ -32,4 +34,23 @@ function largest($arr) {
     }
 
     echo "Largest: $largest<br>";
+}
+
+// this function takes an array in and removes duplicates
+// it then echos the result on index.php as [1, 2, 3]
+function removeDups($arr) {
+    $tempArr = [];
+    $returnString = "[";
+
+    foreach($arr as $item) {
+        if(!in_array($item, $tempArr)) {
+            array_push($tempArr, $item);
+            $returnString .= "$item, ";
+        }
+    }
+
+    $returnString = substr($returnString, 0, strlen($returnString) - 2);
+    $returnString .= "]";
+
+    echo $returnString;
 }

@@ -35,6 +35,9 @@
 
         // call the function largest
         largest($numbers);
+
+        // call the function removeDups
+        removeDups($numbers);
     ?>
 
 </body>
