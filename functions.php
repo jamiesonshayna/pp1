@@ -19,7 +19,7 @@ function printArr($arr) {
             echo $item."<br>";
         }
     } catch(Exception $e) {
-        print("Could not print array: $e");
+        echo "Could not print array: $e";
     }
 }
 
@@ -35,7 +35,7 @@ function largest($arr) {
         }
         echo "Largest: $largest<br>";
     } catch(Exception $e) {
-        print("Could not calculate largest: $e");
+        echo "Could not calculate largest: $e";
     }
 }
 
@@ -58,7 +58,7 @@ function removeDups($arr) {
 
         echo "Remove Duplicates: $returnString<br>";
     } catch(Exception $e) {
-        print("Could not remove duplicates: $e");
+        echo "Could not remove duplicates: $e";
     }
 }
 
@@ -88,6 +88,6 @@ function distribution($arr) {
         echo "Distribution: $returnString]";
 
     } catch(Exception $e) {
-        print("Could not distribute: $e");
+        echo "Could not distribute: $e";
     }
 }
